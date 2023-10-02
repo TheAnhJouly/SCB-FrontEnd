@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        let n=0;
+        let m=0;
+        let k=0;
+        do{
+            n = parseInt(prompt("nhap vao n: "));
+            m = parseInt(prompt("nhap vao m: "));
+            k = parseInt(prompt("nhap vao k: "));
+            if(n>m) alert("n da lon hon m. Nhap lai!");
+        }
+        while(n>m)
+        let count=0;
+        for(let i=n+1;i<m;i++){
+            if(i%k == 0){
+                count++;
+            };
+        }
+        document.getElementsByTagName('p')[0].innerText = `So trong khoang ${n} den ${m} chia het cho ${k} la: `+count;
+        
+    </script>
+</body>
+</html>

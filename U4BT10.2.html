@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+        <script>
+            let n = parseInt(prompt("Nhap vao so n tinh tu 1 den n: "))
+            let i=1;
+            let sum=0;
+            do{
+                sum+=i;
+                i++
+            }
+            while(i<=n);
+            document.getElementsByTagName('p')[0].innerText = `Tong tu 1 den ${n} la: `+sum;
+        </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #container{
+            position: relative;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+        #container:hover .btn{
+            display: block;
+        }
+        .slide{
+            display: none;
+            width: 100%;
+        }
+        .slide img{
+            width: 100%;
+        }
+        .btn{
+            position: absolute;
+            top:45%;
+            font-size: 30px;
+            display: none;
+            cursor : pointer; /*khi di chuot vao thi hien ban tay*/
+            color: white;
+        }
+        #next{
+            right: 0;
+        }
+        .active{
+            display: block; 
+        }
+        #content-dot{
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+        .dot{
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-left: 5px;
+            cursor : pointer;
+        }
+        .active-dot{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+	<div id="container">
+		<div class="slide active">
+			<img src="imgU4/slide_1.png" alt="">
+		</div>
+		<div class="slide">
+			<img src="imgU4/slide_2.png" alt="">
+		</div>
+		<div class="slide">
+			<img src="imgU4/slide_3.png" alt="">
+		</div>
+		<div class="slide">
+			<img src="imgU4/slide_4.png" alt="">
+		</div>
+		<div id="prev" class="btn">
+		<i class=" fa-solid fa-circle-chevron-left"></i>
+		</div>
+		<div id="next" class="btn">
+			<i class="fa-solid fa-circle-chevron-right"></i>
+		</div>
+		<div id="content-dot">
+			<div class="dot" onclick="activeDot(1)"></div>
+			<div class="dot" onclick="activeDot(2)"></div>
+			<div class="dot" onclick="activeDot(3)"></div>
+			<div class="dot" onclick="activeDot(4)"></div>
+		</div>
+	<script>
+        var slideIndex = 1;
+        slideShow();
+
+        setInterval(function(){
+            slideIndex = slideIndex +1;
+            slideShow();
+        },5000)
+
+        function slideShow(){
+            var slides = document.getElementsByClassName('slide');
+            var dots = document.getElementsByClassName('dot');
+            if(slideIndex > slides.length){
+                slideIndex=1;
+            }
+            if(slideIndex <1){
+                slideIndex=slides.length;
+            }
+            for (var i = 0; i <slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            for (var i = 0; i <dots.length; i++) {
+                dots[i].classList.remove('active-dot');
+            }
+            slides[slideIndex-1].classList.add('active');
+            dots[slideIndex-1].classList.add('active-dot');
+        }
+
+        document.getElementById('next').addEventListener('click', function(){
+            slideIndex = slideIndex + 1;
+            slideShow();
+        })
+        document.getElementById('prev').addEventListener('click', function(){
+            slideIndex = slideIndex -1;
+            slideShow();
+        })
+
+        function activeDot(n){
+            slideIndex = n;
+            slideShow();
+        }
+	</script>
+</body>
+</html>

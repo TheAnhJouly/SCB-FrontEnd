@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            width: 800px;
+            height: 400px;
+            transition: font-size .3s linear;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn1">mặc định</button>
+    <button id="btn2">chữ lớn</button>
+    <button id="btn3">chữ nhỏ</button>
+    <h1>Font chữ mặc định 40px</h1>
+
+    <script>
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+        const btn3 = document.getElementById('btn3');
+
+        const h1 = document.getElementsByTagName('h1')[0];
+        h1.style.fontSize="40px";
+        
+        btn1.addEventListener('click',()=>{
+            h1.style.fontSize = "40px";
+            h1.innerText = `Font chữ mặc định ${40}px`;
+        })
+
+        
+        btn2.addEventListener('click',()=>{
+            let currentSize = parseFloat(h1.style.fontSize);
+            currentSize += currentSize*(40/100);console.log(currentSize);
+            h1.style.fontSize = `${currentSize}px`;
+            h1.innerText = `Font chữ mặc định ${currentSize}px`;
+        })
+
+        btn3.addEventListener('click',()=>{
+            let currentSize = parseFloat(h1.style.fontSize);
+            currentSize -= currentSize*(40/100);console.log(currentSize);
+            h1.style.fontSize = `${currentSize}px`;
+            h1.innerText = `Font chữ mặc định ${currentSize}px`;
+        })
+        
+    </script>
+</body>
+</html>

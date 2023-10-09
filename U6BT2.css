@@ -1,0 +1,65 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	padding: 50px 100px;
+	background-color: #313131;
+	color: white;
+}
+.mau {
+	color: #BDE453;
+}
+.title{
+	width: 70%;
+	margin: 20px auto;
+}
+.style-1{
+	font-family: 'Courgette', cursive;
+	font-size: 52px;
+	display: inline-block;
+}
+.style-2{
+	display: inline-block;
+	font-size: 20px;
+	font-family: 'Courgette', cursive;
+}
+.style-3{
+	font-size: 24px;
+	font-family: 'Dancing Script', cursive;
+}
+button{
+	width: 40px;
+	height: 30px;
+	background-color: #BDE453;
+	position: absolute;
+	top: 10px;
+    left: -15px;
+}
+.fa-2x{
+	color: #83A628;
+}
+.container{
+	background-color: #484848;
+	width: 80%;
+	margin: 0 auto;
+}
+.tab{
+	line-height: 50px;
+	border: 1px solid black;
+	position: relative;
+}
+.text{
+	font-size: 21px;
+	margin-left: 35px;
+	font-family: 'Courgette', cursive;
+}
+.content{
+	display: none;
+	padding: 15px 35px;
+	line-height: 25px;
+	border: 1px solid black;
+}
+.hide{
+	display: none;
+}

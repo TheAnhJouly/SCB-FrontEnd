@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="U7BT1.css"> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- div anh -->
+	<div class="picture">
+        <h4 style="font-size: 30px; text-align: center; color:#4E62FB;">Album bé gái dễ thương</h4>
+        <img id="myImg2" class="img" src="http://thocuchuoi.com/wp-content/uploads/2016/03/em-sinh-ra-tu-dau.jpg" alt="Ảnh đẹp">
+        <img id="myImg2" class="img" src="http://thocuchuoi.com/wp-content/uploads/2016/03/em-sinh-ra-tu-dau.jpg" alt="Ảnh đẹp">
+        <img id="myImg2" class="img" src="http://thocuchuoi.com/wp-content/uploads/2016/03/em-sinh-ra-tu-dau.jpg" alt="Ảnh đẹp">
+        <img id="myImg3" class="img" src="http://thocuchuoi.com/wp-content/uploads/2016/03/em-sinh-ra-tu-dau.jpg" alt="Quá dễ thương">
+        <img id="myImg4" class="img" src="http://anh.24h.com.vn/upload/2-2015/images/2015-04-20/1429506262-bfjsde_thuong_11_bxop.jpg" alt="Ảnh đẹp">
+    </div>
+    <!-- div show anh -->
+    <div id="myModal" class="modal">
+        <span class="close">X</span> <!-- nut x -->
+        <img src="" class="modal-content"> <!-- anh hien thi o content -->
+        <div class="caption"></div> <!-- caption neu co -->
+    </div>
+    <script>
+        $(document).ready(function(){
+            $(document).on('click' , '.picture img', function(){
+                var src = $(this).attr('src');
+                $('.modal-content').attr('src',src);
+                $('#myModal').show();
+            });
+            $(document).on('click','#myModal .close , #myModal', function(){
+                $('#myModal').hide();
+            })
+        });
+    </script>
+</body>
+</html>
